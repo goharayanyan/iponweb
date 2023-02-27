@@ -1,0 +1,7 @@
+{% load static %}
+<h1>{{item.name}}</h1>
+<img src="{% static item.picture %}" class="card-img-top" style="object-fit: cover;width: 270px; height: 260px;" alt="...">
+<h2> category-{{item.category}}</h2>
+<h2> store - {{item.store}}</h2>
+<p>${{item.price}}</p>
+<p>{{item.info}}</p>

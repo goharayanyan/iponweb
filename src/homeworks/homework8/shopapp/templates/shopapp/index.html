@@ -1,0 +1,31 @@
+{% load static %}
+{% csrf_token %}
+<h1> Online shop</h1>
+<div>
+  <div>
+      <a href="/shopapp/stores/">shops</a>
+      <br>
+      <a href="/shopapp/bag/">my bag</a>
+      <br>
+      <a href="{% url 'storecategories' %}">Store categories</a>
+      <br>
+      <a href="/shopapp/itemcategories/"> Item categories</a>
+      <br>
+      <h3>Selected individually for you</h3>
+    {% for item in items %}
+      <div style = "float: left; margin: 10px; border: 2px solid #e026ca;">
+        <div style=" width: 20rem; height: 25rem;" >
+          <center><img src="{% static item.picture %}" style="width: 270px; height: 260px;object-fit: cover;" alt="..."></center>
+          <div>
+            <h5>{{item.name}}</h5>
+            <hr>
+            <button type = "submit" style="background-color: #e026ca; color: rgb(250, 250, 250);">Add To Cart</button>
+            </form>
+            <a href="{% url 'item' item.id %}">View</a>
+            <h4 style="display: inline-block;">&nbsp;${{item.price}}</h4>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>

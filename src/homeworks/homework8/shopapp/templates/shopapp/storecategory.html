@@ -1,0 +1,14 @@
+{% load static %}
+{% for store in stores %}
+      <div class="col-lg-4 my-4" style = "float: left; margin: 10px; border: 2px solid #e026ca;">
+        <!-- <div class="card shadow align-items-center" style=" width: 20rem; height: 25rem;" > -->
+          <center><img src="{% static store.picture %}"" class="card-img-top" style="object-fit: cover;width: 270px; height: 260px;" alt="..."></center> 
+          <center><h4>{{store.name}}</h4></center>
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <hr>
+            <a href="{% url 'store' store.id %}" class="btn btn-outline-secondary">Go to this store</a>
+          </div>
+        </div>
+      </div>
+{% endfor %}

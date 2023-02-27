@@ -1,0 +1,16 @@
+{% load static %}
+{% for item in items %}
+      <div style = "float: left; margin: 10px; border: 2px solid #e026ca;">
+        <div style=" width: 20rem; height: 25rem;" >
+          <center><img src="{% static item.picture %}" style="width: 270px; height: 260px; object-fit: cover;" alt="..."></center>
+          <div>
+            <h5>{{item.name}}</h5>
+            <hr>
+            <button data-product="{{product.id}}"
+              style="background-color: #e026ca; color: rgb(250, 250, 250);">Remove from cart</button>
+            <a href="{% url 'item' item.id %}" class="btn btn-outline-secondary">View</a>
+            <h4 style="display: inline-block;">&nbsp;${{item.price}}</h4>
+          </div>
+        </div>
+      </div>
+    {% endfor %}

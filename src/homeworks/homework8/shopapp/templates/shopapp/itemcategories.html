@@ -1,0 +1,9 @@
+{% if categories %}
+    <ul>
+    {% for categ in categories %}
+        <li><a href="/shopapp/itemcategory/{{ categ.id }}/">{{ categ.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No categories are available.</p>
+{% endif %}

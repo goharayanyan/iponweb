@@ -1,0 +1,16 @@
+{% load static %}
+{% for item in items %}
+      <div class="col-lg-4 my-4" style = "float: left; margin: 10px; border: 2px solid #e026ca;">
+        <div class="card shadow align-items-center" style=" width: 20rem; height: 25rem;" >
+          <center><img src="{% static item.picture %}" class="card-img-top" style="object-fit: cover;width: 270px; height: 260px;" alt="..."></center>
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <hr>
+            <button data-product="{{product.id}}" data-action="add" class="btn add-btn update-cart"
+              style="background-color: #e026ca; color: rgb(250, 250, 250);">Add To Cart</button>
+            <a href="{% url 'item' item.id %}" class="btn btn-outline-secondary">View</a>
+            <h4 style="display: inline-block;">&nbsp;${{item.price}}</h4>
+          </div>
+        </div>
+      </div>
+{% endfor %}
